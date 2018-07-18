@@ -7,8 +7,11 @@
 #include<time.h>
 #include<ctype.h>
 #include<windows.h>
+
 char s[1000],s1[1000],s2[1000],s3[1000],s4[1000];
+
 void pain();
+
 long long int gid()
 {
     long long int x;
@@ -19,6 +22,7 @@ long long int gid()
     return x;
 
 }
+
 void sid(long long int x)
 {
     FILE *fp;
@@ -26,6 +30,7 @@ void sid(long long int x)
     fprintf(fp,"%lld",x);
     fclose(fp);
 }
+
 void geth();
 void update();
 void med();
@@ -34,6 +39,7 @@ void exit();
 void store();
 long long int j,k,l,m,n,o,p;
 COORD coord = {0, 0};
+
 void gotoxy(int x, int y)
 {
     COORD coord;
@@ -41,6 +47,7 @@ void gotoxy(int x, int y)
     coord.Y = y;
     SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), coord);
 }
+
 void era(int x,int y)
 {
     int i;
@@ -49,133 +56,8 @@ void era(int x,int y)
         printf(" ");
     gotoxy(x,y);
 }
-void lbox()
-{
-    int i;
-    gotoxy(25,6);
-    printf("%c",201);
-    for(i=26; i<55; i++)
-    {
-        gotoxy(i,6);
-        printf("%c",205);
-    }
-    gotoxy(55,6);
-    printf("%c",187);
-    gotoxy(25,6);
-    for(i=6; i<8; i++)
-    {
-        gotoxy(25,i+1);
-        printf("%c",186);
-    }
-    gotoxy(25,9);
-    printf("%c",200);
-    for(i=26; i<55; i++)
-    {
-        gotoxy(i,9);
-        printf("%c",205);
-    }
-    gotoxy(55,9);
-    printf("%c",188);
-    gotoxy(55,6);
-    for(i=6; i<8; i++)
-    {
-        gotoxy(55,i+1);
-        printf("%c",186);
-    }
 
-}
-void box1()
-{
-    int i;
-    gotoxy(1,3);
-    printf("%c",201);
-    for(i=1; i<79; i++)
-    {
-        gotoxy(1+i,3);
-        printf("%c",205);
-    }
-    gotoxy(80,3);
-    printf("%c",187);
-    gotoxy(1,3);
-    for(i=4; i<8; i++)
-    {
-        gotoxy(1,i);
-        printf("%c",186);
-    }
-    gotoxy(1,9);
-    for(i=4; i<8; i++)
-    {
-        gotoxy(80,i);
-        printf("%c",186);
-    }
-    gotoxy(80,7);
-    printf("%c",188);
-    gotoxy(1,7);
-    printf("%c",200);
-    for(i=1; i<79; i++)
-    {
-        gotoxy(1+i,7);
-        printf("%c",205);
-    }
-}
 
-void box()
-{
-    int i;
-    for(i=3; i<=79; i++)
-    {
-        gotoxy(i,3);
-        printf("%c",219);
-        gotoxy(78,45);
-        printf("%c",219);
-        gotoxy(i,45);
-        printf("%c",219);
-    }
-
-    for(i=3; i<=45; i++)
-    {
-        gotoxy(3,i);
-        printf("%c",219);
-        gotoxy(79,i);
-        printf("%c",219);
-    }
-}
-void wbox()
-{
-    int i;
-    for(i=5; i<=75; i++)
-    {
-        gotoxy(i,5);
-        printf("%c",219);
-        gotoxy(74,40);
-        printf("%c",219);
-        gotoxy(i,40);
-        printf("%c",219);
-    }
-
-    for(i=5; i<=40; i++)
-    {
-        gotoxy(5,i);
-        printf("%c",219);
-        gotoxy(75,i);
-        printf("%c",219);
-    }
-}
-
-void ani()
-{
-    int i;
-    for (i=55; i>=27; i--)
-    {
-        Sleep(20);
-        gotoxy(i,5);
-    }
-    for (i=27; i<=55; i++)
-    {
-        Sleep(20);
-        gotoxy(i,5);
-    }
-}
 int t(int x,int y)
 {
     time_t t = time(0);
@@ -192,41 +74,7 @@ long long int D()
     struct tm * now = localtime( & t );
     return ((now->tm_mday*100+(now->tm_mon+1))*100+(now->tm_year-100));
 }
-void mbox()
-{
-    int i;
-    gotoxy(1,8);
-    printf("%c",201);
-    for(i=1; i<79; i++)
-    {
-        gotoxy(1+i,8);
-        printf("%c",205);
-    }
 
-    gotoxy(80,8);
-    printf("%c",187);
-    gotoxy(1,8);
-    for(i=6; i<30; i++)
-    {
-        gotoxy(1,2+i);
-        printf("%c",186);
-    }
-    gotoxy(1,32);
-    printf("%c",200);
-    for(i=1; i<79; i++)
-    {
-        gotoxy(1+i,32);
-        printf("%c",205);
-    }
-    gotoxy(80,32);
-    printf("%c",188);
-    gotoxy(80,6);
-    for(i=6; i<30; i++)
-    {
-        gotoxy(80,2+i);
-        printf("%c",186);
-    }
-}
 void mmenu()
 {
     system("cls");
@@ -235,14 +83,12 @@ void mmenu()
 f:
     gotoxy(22,8);
     printf("...PLEASE CHOOSE FROM THE MENU BELOW...");
-//    gotoxy(22,9);
-//    printf("PLEASE PRESS FIRST LETTER ONLY");
+
     t(65,22);
     gotoxy(14,15);
     printf("ARE YOU NEW HERE?? Y/N");
     gotoxy(14,17);
-//    printf("UPDATE INFORMATION");
-//    gotoxy(14,19);
+
     printf("EXIT");
     gotoxy(10,25);
     printf("(PLEASE PRESS FIRST LETTER ONLY)");
@@ -252,10 +98,7 @@ f:
     switch(toupper(ch))
     {
         era(10,26);
-//    case 'U':
-//        era(10,26);
-//        update();
-//        break;
+
     case 'Y':
         era(10,26);
         geth();
@@ -279,11 +122,13 @@ f:
             goto f;
         }
     case 'N':
-
+        era(10,26);
+        printf("Sorry! This service is not running now! please register as new!! Y/N");
+        break;
     default:
         era(10,26);
         gotoxy(10,27);
-        printf("PLEASE PRESS VALID CHARACHTERS ONLY (U,G,E)");
+        printf("PLEASE PRESS VALID CHARACHTERS ONLY (Y,N,E)");
         Sleep(500);
         printf(".  ");
         Sleep(1000);
@@ -301,20 +146,7 @@ main()
     char a,b[10000];
     FILE *fp;
     mmenu();
-//    fp=fopen("new sayem.dat","a");
-//    while(gets(b))
-//    {
-//        fputs(b,fp);
-//        fputs("\n",fp);
-//    }
-//    fclose(fp);
-//    fp=fopen("neew sayem.dat","r");
-//    char c[121];
-//    while(fscanf(fp,"%s",c)!=EOF)
-//    {
-//        puts(c);
-//    }
-//    fclose(fp);
+
 }
 void update()
 {
@@ -690,9 +522,9 @@ void geth()
 ff:
     system("cls");
     gotoxy(10,3);
-    printf("PLEASE PRESS FIRST LETTER OF YOUR DISEASE OR 'R' FOR RETURNING PREVIOUS MENU\n");
-    gotoxy(10,5);
-    printf("  **FEVER** **COLD** **GASTRIC** **PAIN** **WEEKNESS** **ANXIETY**\n");
+    printf("PLEASE PRESS FIRST LETTER OF YOUR DISEASE\n          OR\n          'R' FOR RETURNING PREVIOUS MENU\n");
+    gotoxy(10,8);
+    printf("  \n**FEVER**\n**COLD** \n**GASTRIC** \n**PAIN** \n**WEEKNESS** \n**ANXIETY**\n");
     gotoxy(1,6);
     c=getche();
     era(1,5);
@@ -2001,6 +1833,4 @@ f:
         era(1,30);
         goto f;
     }
-
 }
-
