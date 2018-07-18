@@ -11,7 +11,7 @@ Project  Feature:
 -Select Problem from the list.
 -Select Doctor to be consultant with and book schedule.
 
-Tools Used: C language , Emulator turbo C.
+Tools Used: C language ,  Codeblocks.
 
 Role: Implementing functions, Designing etc.
 
